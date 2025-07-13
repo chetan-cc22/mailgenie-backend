@@ -15,7 +15,9 @@ public class EmailGeneratorController {
 
     private final EmailGeneratorService emailGeneratorService;
 
-    @PostMapping("/generate")
+
+    @CrossOrigin(origins = "https://mailgenie-frontend.vercel.app")
+    @PostMapping("/api/email/generate")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest)
     {
         String response= emailGeneratorService.generateEmailReply(emailRequest);
